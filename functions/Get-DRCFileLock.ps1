@@ -1,9 +1,16 @@
 ﻿function Get-DRCFileLock
 {
     Param(
-        $fileName,
-        $tries = 10,
-        $tryInterval = 3
+        [Parameter(
+            Position=0,
+            Mandatory=$true
+        )]$fileName,
+        [Parameter(
+            Position=1
+        )]$tries = 10,
+        [Parameter(
+            Position=1
+        )]$tryInterval = 1
     )
     for ($i = 1; $i -le $tries; $i++)
     {
